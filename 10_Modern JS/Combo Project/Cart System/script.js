@@ -1,10 +1,10 @@
 const products = [
-    { id: 1, name: "Asphalt Pro", price: 150, image: "Assets/Asphalt.webp"},
-    { id: 2, name: "Nitro Gas", price: 50, image: "Assets/Asphalt.webp"},
-    { id: 3, name: "Race Track", price: 520, image: "Assets/Asphalt.webp"},
-    { id: 4, name: "New Models", price: 350, image: "Assets/Asphalt.webp"},
-    { id: 5, name: "V8 Engine", price: 460, image: "Assets/Asphalt.webp"},
-    { id: 6, name: "Color Design", price: 200, image: "Assets/Asphalt.webp"},
+    { id: 1, name: "Asphalt Pro", price: 150, image: "Assets/limited-Product.jpeg"},
+    { id: 2, name: "Nitro Gas", price: 50, image: "Assets/limited-Product.jpeg"},
+    { id: 3, name: "Race Track", price: 520, image: "Assets/limited-Product.jpeg"},
+    { id: 4, name: "New Models", price: 350, image: "Assets/limited-Product.jpeg"},
+    { id: 5, name: "V8 Engine", price: 460, image: "Assets/limited-Product.jpeg"},
+    { id: 6, name: "Color Design", price: 200, image: "Assets/limited-Product.jpeg"},
 ];
 
 const shopItems = document.querySelector("#shopItems");
