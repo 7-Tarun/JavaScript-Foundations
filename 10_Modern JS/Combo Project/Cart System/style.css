@@ -130,7 +130,7 @@ p{
         /* border: 1px solid #ccc; */
         border-radius: 4px;
         font-size: small;
-        font-weight: lighter;
+        font-weight: normal;
     }
     .label{
         display: none;
