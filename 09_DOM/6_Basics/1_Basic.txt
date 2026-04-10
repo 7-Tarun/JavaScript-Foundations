@@ -1,0 +1,16 @@
+In this 6_Basics file we are going to learn Events that are:
+
+1. Event Bubbling and Capturing
+2. Event delegation
+3. Form Events
+4. Keyboard Events
+
+1. Event Bubbling:- When an event happens on an element, it first runs on that element, then moves upwards to its parent, then to the parent’s parent, and so on.  Example: If you click on a <button> inside a <div>, first the button’s event runs, then the div’s event, then the body, etc.
+
+2. Event Capturing:- This is the opposite of bubbling. The event starts from the top parent and goes downwards to the target element.
+    Example: If you click on a <button> inside a <div>, first the body’s event runs, then the div’s event, and lastly the button’s event.
+
+3. Event Delegation:- Instead of adding an event to every small element, we add one event listener to the parent. The parent can check which child was clicked using event.target.  Example: Instead of adding click events to every <li> in a list, just add one event to <ul> and check which <li> was clicked.
+
+
+Note- Prevent default is a method that Prevent (stop) reloading in a browser. it stops the default behaviour of the browser.

@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+
+.lootBox {
+    color: darkgreen;
+    background-color: darkgrey;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.proMode {
+    background-color: #222;
+    color: aqua;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 15px aqua;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.proMode2 {
+    background-color: grey;
+    color: blue;
+    border: 2px solid black;
+    border-radius: 5px;
+}

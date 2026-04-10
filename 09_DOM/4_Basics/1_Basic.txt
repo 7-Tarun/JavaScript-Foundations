@@ -1,0 +1,12 @@
+• Property                        || Define                                       || Use Case
+
+→ parentNode                         Parent Element Access karta hai.                Kisi Child element se uska parent find karna.
+→ children                           Child Element ka collection deta hai.           List of the elements ko loop karke modify karna.
+→ nextElementSibling                 Agla Sibling Element Access karta hai.          Next Paragraph ya next item dhoondhna.
+→ previousElementSibling             Pichhla Sibling Access karta hai.               Pichhle item ya element ko modify karna.
+
+
+
+• Note:   Parent - Ak level uper.
+→         Child - Ak level Niche.
+→         Sibiling - Ak hi parent ke andar, same level wale.

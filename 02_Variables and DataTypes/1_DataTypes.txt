@@ -1,0 +1,14 @@
+There are two types of DataTypes in Java Script:-
+1. Primitive Data Type
+2. Non Primitive Data Type
+
+-> Primitive Data Type:
+1. Number - Represents numeric values (Integer and Float).     Ex- 5, 5.3
+2. String - Represents text (Inside Quotes).                   Ex- "Hello", 'JavaScript'
+3. Boolean - Represents logical values: true or false.         Ex- true, false
+4. Undefined - Variable declared but not assigned a value.     Ex- let x;
+5. Null - Empty or non-existent value.                         Ex- null
+6. Symbol - Reipresents a unique and mmutable value.           Ex- Symbol('id')
+7. BigInt - Represents large integers (Not Common).            Ex- 9007199254740991n
+
+-> Non Premitive Data Type:

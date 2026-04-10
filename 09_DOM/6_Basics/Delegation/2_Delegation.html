@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        #result {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 2px;
+            padding: 1px;
+            margin: 1px;
+        }
+
+        li span{
+            /* display: inline; */
+            cursor: pointer;
+        }
+
+        li span:hover {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">Fruits
+        <li><span>Apple</span></li>  <!-- span ka use karne se puri width use nahi hoti -->
+        <li><span>Mango</span></li>
+        <li><span>Guvava</span></li>
+        <li><span>Grapes</span></li>
+        <li><span>Orange</span></li>
+        <li><span>Banana</span></li>
+    </ul>
+    <div id="result"></div>
+    <script src="2_Delegation.js"></script>
+</body>
+
+</html>

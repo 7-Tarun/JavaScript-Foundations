@@ -1,0 +1,3 @@
+For Each Method is a method which is to call every elment of an array.
+
+Higher Order Function: Higher order function/method is a fucntion that take another function as a parameter or returning another function as a value.

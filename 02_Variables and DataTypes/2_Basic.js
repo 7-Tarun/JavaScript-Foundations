@@ -1,0 +1,12 @@
+fullname="Tarun Ghadoria";
+console.log(fullname);
+age=24;
+price=199.9;
+n=null;
+u=undefined;
+console.log(price);
+console.log(n);
+console.log(u);
+isfollow=false;
+isfollow=true;
+console.log(isfollow);

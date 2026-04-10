@@ -1,0 +1,14 @@
+Modern JavaScript (ES6):- Modern JavaScript (ES6) refers to the 6 major updates to the JavaScript Language releansed in 2015.
+
+Key Features:-
+1. Replased var with let and const.
+2. Using Arrow Functions.
+3. Template Literals (String).
+4. Destructuring Fetching data from array and object easily.
+5. Promises.
+6. Modules Using import and export.
+
+The Holy Trinity:-
+1. Map
+2. Filter
+3. Reduce

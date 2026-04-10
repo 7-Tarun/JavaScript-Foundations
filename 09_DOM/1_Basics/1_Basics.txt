@@ -1,0 +1,11 @@
+• We have multiple method to access our elements:-
+
+1. document.getElementById("id_name");              Selecting with id.
+2. document.getElementsByClassName("class_name");   Selecting with class.
+3. document.getElementsByTagName("p");              Selecting with tagName (paragraph tag).
+
+• There is also a better way or we can say a level up way to access our element which is called Query Selector.
+In Query Selector we can pass our ID, Class, & TagName.
+
+1. document.querySelector("id_name / class_name / tagName");
+2. document.querySelectorAll("id_name / class_name / tagName");

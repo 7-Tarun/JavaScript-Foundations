@@ -1,0 +1,40 @@
+Main types of Operators in JavaScript are:-
+1. Arithmetic
+2. Assignment
+3. Comparison
+4. Logical
+5. Increment/Decrement
+6. Ternary
+
+1. Arithmetic Operator: An arithmetic operator is a symbol used in programming to perform basic math operations like Addition (+), Subtraction (−), Multiplication (*), and Division (/), Modulus[remainder] (%), Exponent[power] (2**3).
+
+2. Assignment Operator: An assignment operator is used to assign values to variables. The most common is the equal sign (=), but there are also combined operators that perform an operation and assign the result. Here are 6 common assignment operators:
+   =   (assigns value)            Ex: x = 10,  Equivalent to: x = 10.
+   +=  (add and assign)           Ex: x += 5,  Equivalent to: x = x+5.
+   -=  (subtract and assign)      Ex: x -= 5,  Equivalent to: x = x-5.
+   *=  (multiply and assign)      Ex: x *= 5,  Equivalent to: x = x*5.
+   /=  (divide and assign)        Ex: x /= 5,  Equivalent to: x = x/5.
+   %=  (modulus and assign)       Ex: x %= 5,  Equivalent to: x = x%5.
+
+3. Comparison Operator: Comparison operators are used to compare two values and return true or false. Here are 8 common comparison operators:
+   ==   (equal to)                  Ex: 5 == "5"
+   ===  (equal value and type)      Ex: 5 === "5"
+   !=   (not equal to)              Ex: 5 != "5"
+   !==  (not equal value or type)   Ex: 5 !== "5"
+   >    (greater than)              Ex: 10 > 5
+   <    (less than)                 Ex: 5 < 2
+   >=   (greater than or equal to)  Ex: 5 >= 5
+   <=   (less than or equal to)     Ex: 3 <= 5
+
+4. Logical Operator: Logical operators are used to combine or invert boolean values (true/false). They help make decisions in code. Here are the 3 main logical operators:
+   &&   (Logical AND)      Ex: true && false   // false
+   ||   (Logical OR)       Ex: true || false   // true
+   !    (Logical NOT)      Ex: !true           // false
+
+5. Increment/Decrement Operator: These operators are used to increase or decrease the value of a variable by 1. They are commonly used in loops and counting.
+   ++   (Increment)      Ex: x++ or ++x   // pahale use then increment or pahale increment then use.
+   --   (Decrement)      Ex: x-- or --x   // pahale use then decrement or pahale decrement then use.
+
+6. Ternary Operator: The ternary operator is a shortcut for an if-else statement. It checks a condition and returns one value if true, and another if false. Syntax:
+   condition ? valueIfTrue : valueIfFalse
+   Ex: let result = (age >= 18) ? "Adult" : "Minor";

@@ -1,0 +1,49 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.heighlight {
+    /*Isse paragraph me changes honge kyuki ye property JS me hamne p pe set kar di.*/
+    color: blue;
+    background-color: lightgray;
+    font-size: bold;
+}
+
+.heighlight2 {
+    /*Or isse h1 me changes honge kyuki isse hamne h1 pe set kar di.*/
+    color: white;
+    background-color: black;
+}
+
+button {
+    margin: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#btnparent {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,39 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+#inventory{
+    border: 2px dashed white;
+    min-height: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #111;
+}
+
+#spawnBtn{
+    display: block;
+    margin: 0 auto;
+    padding: 3px 5px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.loot-item{
+    background-color: gold;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+}
