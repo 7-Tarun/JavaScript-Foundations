@@ -1,0 +1,8 @@
+⭐Synchronous → One task at a time, in order. Next task waits until the current one finishes.
+Like a queue at a counter — person 2 can't be served until person 1 is done.
+
+⭐Asynchronous → Start a task, don't wait for it, move on. It comes back when it's done.
+Like ordering food at a restaurant — you place your order and do other things while the kitchen prepares it.
+
+-> Sync → reads line by line, blocks everything until done.
+-> Async → sends the task to the background, JS keeps running, result comes back later via callback/promise.
