@@ -1,0 +1,6 @@
+A Promise is an Object representing the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+-> A Promise always has one these 3 states:-
+1. Pending (Waiting)
+2. Fulfilled / Resolved (Success)
+3. Rejected (Failure)
