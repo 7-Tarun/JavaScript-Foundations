@@ -3,7 +3,7 @@
 async function getData() {
     console.log("Receveing data from the internet...");
 
-    try{
+    try {
         // 1st Await: Pauses to establish the network connection and receive the HTTP headers (the "Delivery Box"). The actual data body is not fully downloaded yet.
         const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
 
@@ -15,7 +15,7 @@ async function getData() {
         console.log(`User Email: ${actualData.email}`);
     }
 
-    catch (error){
+    catch (error) {
         console.log(`Failed to fetch data: ${error}`);
     }
 
