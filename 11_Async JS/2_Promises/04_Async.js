@@ -1,18 +1,18 @@
 //There is also a new or better way to handle the promises results.
 //Instead of using then and catch we use we use async function.
 
-const game = new Promise((resolved,reject) => {
+const game = new Promise((resolved, reject) => {
     let isLose = true;
     console.log(`Game Start...`);           //1. Code execute synchronously first.
 
     setTimeout(() => {                      //Asynchronous task goes to Web API,Promise state becomes 'Pending'.
-        if(isLose){                         //After 3sec timer ends and reject part is execute.
+        if (isLose) {                         //After 3sec timer ends and reject part is execute.
             reject(`You Lose!`);
         }
-        else{
+        else {
             resolved(`You Won!`);
         }
-    },3000);
+    }, 3000);
 
 })
 

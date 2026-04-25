@@ -3,16 +3,16 @@
 console.log(`Cooking Started...`);
 
 setTimeout(() => {
-     console.log(`1. Vegetsbled are cutted`);
+   console.log(`1. Vegetsbled are cutted`);
 
-     setTimeout(() => {
-        console.log(`2. Start cooking veggies`);
+   setTimeout(() => {
+      console.log(`2. Start cooking veggies`);
 
-        setTimeout(() => {
+      setTimeout(() => {
          console.log(`3. Finish eating.`);
-        },1000);
+      }, 1000);
 
-     },5000);
+   }, 5000);
 
 }, 1000);
 
