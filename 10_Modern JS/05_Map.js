@@ -7,4 +7,3 @@ console.log(`${square}`);
 console.log(`${arr}`);
 
 console.log(`${arr.map(num => num)}`);
-
