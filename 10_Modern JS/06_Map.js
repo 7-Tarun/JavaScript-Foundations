@@ -6,6 +6,7 @@ const inventory = [
     {id: 5,name: "Dragon Spear",category: "Weapon",price: 1200},
 ];
 
+
 inventory.map(({id,name,category,price}) => {
     console.log(`Id: ${id}\nName: ${name}\nCategory: ${category}\nPrice: ${price}`);
 });
