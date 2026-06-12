@@ -6,5 +6,4 @@ const cart = [
 
 // reduce syntax: array.reduce((totalValue, currentItem) => logic, initialValue)
 const totalBill = cart.reduce((acc, item) => acc + item.price, 0);
-
 console.log(`Total Amount: ${totalBill}`);
