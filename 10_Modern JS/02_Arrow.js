@@ -18,4 +18,5 @@ const healPlayer = (healAmount) =>{
 }
 
 healPlayer(90);
+
 console.log(`Current Health: ${currentHealth}`);
