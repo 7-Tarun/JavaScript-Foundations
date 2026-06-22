@@ -164,6 +164,12 @@ input:focus {
     padding: 14px 18px;
     text-align: center;
     min-width: 110px;
+    transition: transform 0.15s ease;
+}
+
+.summary-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .summary-item span {
