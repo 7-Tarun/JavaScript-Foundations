@@ -92,6 +92,51 @@ input:focus {
     transition: transform 0.15s ease;
 }
 
+.comBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #226d11, #2c9415);
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.comBtn:hover {
+    transform: translateY(-1px);
+}
+
+.delBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #6d2011, #941515);
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.delBtn:hover {
+    transform: translateY(-1px);
+}
+
+/* Override: keep delete button visually at the end and maintain responsiveness */
+#lists li {
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+#lists li .comBtn{
+    margin-left: auto;
+    flex: 0 0 auto;
+}
+
+#lists li > * {
+    min-width: 0;
+}
+
 #add:hover {
     transform: translateY(-1px);
 }
@@ -106,6 +151,7 @@ input:focus {
 }
 
 #lists li {
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 10px;
