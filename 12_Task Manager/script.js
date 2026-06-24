@@ -1,6 +1,9 @@
 let input = document.querySelector("#taskInput");
 let addBtn = document.querySelector("#add");
 let list = document.querySelector("#lists");
+let totalTask = document.querySelector("#totalTasks");
+let completedTask = document.querySelector("#completedTasks");
+let pendingTask = document.querySelector("#pendingTasks");
 
 addBtn.addEventListener("click", function () {
     //Li Element created and with input text content.
@@ -27,9 +30,6 @@ addBtn.addEventListener("click", function () {
         input.value = "";
     }
 
-    let total = list.children.length;
-    console.log("Total List: ",total);
-
     completeBtn.addEventListener("click",function (){
         taskList.classList.add("completed");
         completeBtn.classList.add("comBtnUpdate");
@@ -39,7 +39,5 @@ addBtn.addEventListener("click", function () {
 
     deleteBtn.addEventListener("click", function () {
         taskList.remove();
-        total--;
-        console.log("Deleted: ",total);
     });
 });
