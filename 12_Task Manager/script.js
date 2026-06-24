@@ -42,5 +42,4 @@ addBtn.addEventListener("click", function () {
         total--;
         console.log("Deleted: ",total);
     });
-
 });
