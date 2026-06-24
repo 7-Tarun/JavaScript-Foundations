@@ -1,14 +1,11 @@
 let input = document.querySelector("#taskInput");
 let addBtn = document.querySelector("#add");
-let list  = document.querySelector("#lists");
-let delBtn = document.querySelector(".delBtn");
-let comBtn = document.querySelector(".comBtn");
+let list = document.querySelector("#lists");
 
-addBtn.addEventListener("click", function() {
+addBtn.addEventListener("click", function () {
     //Li Element created and with input text content.
     let taskList = document.createElement("li");
     taskList.textContent = input.value;
-
 
     //Delete Button created in front of li.
     let completeBtn = document.createElement("button");
@@ -22,14 +19,28 @@ addBtn.addEventListener("click", function() {
     taskList.appendChild(deleteBtn);
     deleteBtn.classList.add("delBtn");
 
-    let textSpan = document.createElement("Span");
-    taskList.appendChild(textSpan);
-
-    if(input.value.trim() === "") {
+    if (input.value.trim() === "") {
         alert("Enter A Task!")
     }
-    else{
+    else {
         list.appendChild(taskList);
         input.value = "";
     }
+
+    let total = list.children.length;
+    console.log("Total List: ",total);
+
+    completeBtn.addEventListener("click",function (){
+        taskList.classList.add("completed");
+        completeBtn.classList.add("comBtnUpdate");
+        deleteBtn.classList.add("delBtnUpdate");
+        completeBtn.textContent = "Done";
+    });
+
+    deleteBtn.addEventListener("click", function () {
+        taskList.remove();
+        total--;
+        console.log("Deleted: ",total);
+    });
+
 });

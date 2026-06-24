@@ -24,7 +24,6 @@ const renderProduct = () => {
                     <button class="itemBtn" onclick="addtoCart(${id})">Add to Cart</button>
                 </div>`;
     });
-    ;
 };
 
 renderProduct();
