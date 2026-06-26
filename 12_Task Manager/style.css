@@ -66,7 +66,7 @@ h1 {
     gap: 10px;
 }
 
-input {
+#taskInput {
     flex: 1;
     border: 1px solid var(--twenty-percent);
     background: var(--light-color);
@@ -76,9 +76,24 @@ input {
     outline: none;
 }
 
-input:focus {
+#taskInput:focus {
     border-color: var(--ten-percent);
     box-shadow: 0 0 0 3px rgba(157, 102, 56, 0.15);
+}
+
+#searchInput{
+    /* flex: 1; */
+    border: 1px solid #8f8f8f;
+    background: #eaebe8;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #251006;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #6f3319;
+    box-shadow: 0px 0px 1px 1px rgb(156 116 81 / 15%);
 }
 
 #add {
