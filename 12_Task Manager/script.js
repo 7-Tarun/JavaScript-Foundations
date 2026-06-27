@@ -42,10 +42,14 @@ addBtn.addEventListener("click", function () {
         //Task Counter
         pendingTask.textContent = inputList.length;
 
-        arr = "";
+        input.value = "";
     }
 
     completeBtn.addEventListener("click", function () {
+        if (taskList.classList.contains("completed")) {
+            return;
+        }
+
         taskList.classList.add("completed");
         completeBtn.classList.add("comBtnUpdate");
         deleteBtn.classList.add("delBtnUpdate");
@@ -53,10 +57,8 @@ addBtn.addEventListener("click", function () {
 
         //Task Counter
         completedCount++;
-        if(taskList.classList.contains("completed")){
-            completedTask.textContent = completedCount;
-            pendingTask.textContent = inputList.length - completedCount;
-        }
+        completedTask.textContent = completedCount;
+        pendingTask.textContent = inputList.length - completedCount;
     });
 
     deleteBtn.addEventListener("click", function () {
