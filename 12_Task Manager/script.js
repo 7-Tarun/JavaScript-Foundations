@@ -14,7 +14,7 @@ addBtn.addEventListener("click", function () {
 
     //Li Element created and with input text content.
     let taskList = document.createElement("li");
-    taskList.textContent = input.value;
+    taskList.textContent = arr;
 
     //Complete Button created in front of li.
     let completeBtn = document.createElement("button");
@@ -42,7 +42,7 @@ addBtn.addEventListener("click", function () {
         //Task Counter
         pendingTask.textContent = inputList.length;
 
-        input.value = "";
+        arr = "";
     }
 
     completeBtn.addEventListener("click", function () {
@@ -88,5 +88,20 @@ searchInput.addEventListener("input",function(){
             items.style.display = "none";
         }
     });
-    console.log(value);
+});
+
+
+//Keyboard Enter Support
+input.addEventListener('keydown',(event) => {
+    if(event.key === "Enter"){
+        let arr = input.value.trim();
+
+        if(arr !== "") {
+            addBtn.click();
+            input.value = "";
+        }
+        else{
+            alert("Enter A Task!");
+        }
+    }
 });
