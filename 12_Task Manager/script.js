@@ -7,109 +7,93 @@ let pendingTask = document.querySelector("#pendingTasks");
 let searchInput = document.querySelector("#searchInput");
 
 let inputList = [];
-let completedCount = 0;
 
 function renderTasks() {
     list.innerHTML = "";
 
     inputList.forEach(function (task) {
         let taskList = document.createElement("li");
-        taskList.textContent = task;
 
-        //Complete Button created in front of li.
+        let span = document.createElement("span");
+        span.textContent = task.text;
+        taskList.appendChild(span);
+
         let completeBtn = document.createElement("button");
-        completeBtn.textContent = "Complete";
-        taskList.appendChild(completeBtn);
+        completeBtn.textContent = task.completed ? "Done" : "Complete";
         completeBtn.classList.add("comBtn");
 
-        //Delete Button created in front of li.
+        completeBtn.addEventListener("click", function () {
+            task.completed = !task.completed;
+            renderTasks(); 
+        });
+
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
-        taskList.appendChild(deleteBtn);
         deleteBtn.classList.add("delBtn");
 
-        list.appendChild(taskList);
-
-        completeBtn.addEventListener("click", function () {
-            if (taskList.classList.contains("completed")) {
-                return;
-            }
-
+        deleteBtn.addEventListener("click", function () {
+            inputList = inputList.filter(t => t !== task);
+            renderTasks(); 
+        });
+        
+        if (task.completed) {
             taskList.classList.add("completed");
             completeBtn.classList.add("comBtnUpdate");
             deleteBtn.classList.add("delBtnUpdate");
-            completeBtn.textContent = "Done";
+        }
 
-            //Task Counter
-            completedCount++;
-            completedTask.textContent = completedCount;
-            pendingTask.textContent = inputList.length - completedCount;
-        });
-
-        deleteBtn.addEventListener("click", function () {
-            if (taskList.classList.contains("completed")) {
-                completedCount--;
-                completedTask.textContent = completedCount;
-                pendingTask.textContent = inputList.length - completedCount;
-            }
-
-            //Task Counter
-            inputList.length = inputList.length - 1;
-            totalTask.textContent = inputList.length;
-            pendingTask.textContent = inputList.length - completedCount;
-
-            taskList.remove();
-        });
+        taskList.appendChild(completeBtn);
+        taskList.appendChild(deleteBtn);
+        list.appendChild(taskList);
     });
+
+    totalTask.textContent = inputList.length;
+    completedTask.textContent = inputList.filter(t => t.completed).length;
+    pendingTask.textContent = inputList.length - inputList.filter(t => t.completed).length;
 }
 
 addBtn.addEventListener("click", function () {
     let arr = input.value.trim();
 
     if (arr === "") {
-        alert("Enter A Task!")
+        alert("Enter A Task!");
     }
-    else if (inputList.includes(arr)) {
+
+    else if (inputList.some(t => t.text === arr)) {
         alert("Task already exists!");
     }
     else {
-        inputList.push(arr);
-        renderTasks();
-
-        totalTask.textContent = inputList.length;
-        pendingTask.textContent = inputList.length;
+        inputList.push({
+            text: arr,
+            completed: false
+        });
 
         input.value = "";
+        renderTasks();
     }
 });
+
 
 searchInput.addEventListener("input", function () {
     let value = searchInput.value.toLowerCase();
     let items = document.querySelectorAll("#lists li");
 
-    items.forEach(items => {
-        let text = items.firstChild.textContent.toLowerCase();
+    items.forEach(item => {
+        // Look specifically at the span where the text is stored
+        let text = item.querySelector("span").textContent.toLowerCase();
         if (text.includes(value)) {
-            items.style.display = "flex";
+            item.style.display = "flex";
         }
         else {
-            items.style.display = "none";
+            item.style.display = "none";
         }
     });
 });
 
-
-//Keyboard Enter Support
+// KEYBOARD ENTER SUPPORT
 input.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
-        let arr = input.value.trim();
-
-        if (arr !== "") {
-            addBtn.click();
-            input.value = "";
-        }
-        else {
-            alert("Enter A Task!");
-        }
+        event.preventDefault();
+        addBtn.click();
     }
 });
