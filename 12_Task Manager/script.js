@@ -6,6 +6,7 @@ let completedTask = document.querySelector("#completedTasks");
 let pendingTask = document.querySelector("#pendingTasks");
 let searchInput = document.querySelector("#searchInput");
 
+//Single Source of truth
 let inputList = [];
 
 function renderTasks() {
@@ -15,32 +16,36 @@ function renderTasks() {
         let taskList = document.createElement("li");
         let span = document.createElement("span");
         span.textContent = task.text;
-        taskList.appendChild(span);
 
+        //Complete Button Created
         let completeBtn = document.createElement("button");
         completeBtn.textContent = task.completed ? "Done" : "Complete";
         completeBtn.classList.add("comBtn");
 
+        //This function only work when the user click on Complete Button.
         completeBtn.addEventListener("click", function () {
-            task.completed = !task.completed;
-            renderTasks(); 
+            task.completed = !task.completed;       //completed = false, became true.
+            renderTasks();                          //Rerender the function to display the changes
         });
 
+        //Delete Button Created
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delBtn");
 
         deleteBtn.addEventListener("click", function () {
-            inputList = inputList.filter(t => t !== task);
-            renderTasks(); 
+            inputList = inputList.filter(t => t !== task);      //On click, remove the selected task from the list and re-render tasks.
+            renderTasks();
         });
         
+        //Condition check, this if block only works when the specific value of completed is true. 
         if (task.completed) {
             taskList.classList.add("completed");
             completeBtn.classList.add("comBtnUpdate");
             deleteBtn.classList.add("delBtnUpdate");
         }
 
+        taskList.appendChild(span);
         taskList.appendChild(completeBtn);
         taskList.appendChild(deleteBtn);
         list.appendChild(taskList);
@@ -51,7 +56,7 @@ function renderTasks() {
     pendingTask.textContent = inputList.length - inputList.filter(t => t.completed).length;
 }
 
-addBtn.addEventListener("click", function () {
+addBtn.addEventListener("click", function () {  //Program start from here
     let arr = input.value.trim();
 
     if (arr === "") {
@@ -62,13 +67,13 @@ addBtn.addEventListener("click", function () {
         alert("Task already exists!");
     }
     else {
-        inputList.push({
+        inputList.push({        //Passing Object, completed is false
             text: arr,
             completed: false
         });
 
         input.value = "";
-        renderTasks();
+        renderTasks();      //Calling Function
     }
 });
 
