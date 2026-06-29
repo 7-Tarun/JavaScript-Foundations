@@ -13,7 +13,6 @@ function renderTasks() {
 
     inputList.forEach(function (task) {
         let taskList = document.createElement("li");
-
         let span = document.createElement("span");
         span.textContent = task.text;
         taskList.appendChild(span);
