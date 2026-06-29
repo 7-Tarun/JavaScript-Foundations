@@ -9,6 +9,23 @@ let searchInput = document.querySelector("#searchInput");
 //Single Source of truth
 let inputList = [];
 
+function loadTasks() {
+    //localStorage.getItem("tasks"); -> Browser se saved data nikalta hai string(text) form me.
+    let savedData = localStorage.getItem("tasks");
+    if (savedData) {        //if data is found
+        //then covert the string(text) into an array and put it into the inputList
+        inputList = JSON.parse(savedData);
+    }
+    //Rendering UI to show the saved list
+    renderTasks();
+}
+
+function saveTasks() {
+    //Browser only understand string(text). JSON Stringfy convert inputList into string.
+    //setItem("key",value) -> browser me task nam ke variable me data store karta hai.
+    localStorage.setItem("tasks", JSON.stringify(inputList));
+}
+
 function renderTasks() {
     list.innerHTML = "";
 
@@ -54,6 +71,7 @@ function renderTasks() {
     totalTask.textContent = inputList.length;
     completedTask.textContent = inputList.filter(t => t.completed).length;
     pendingTask.textContent = inputList.length - inputList.filter(t => t.completed).length;
+    saveTasks();
 }
 
 addBtn.addEventListener("click", function () {  //Program start from here
@@ -76,7 +94,6 @@ addBtn.addEventListener("click", function () {  //Program start from here
         renderTasks();      //Calling Function
     }
 });
-
 
 searchInput.addEventListener("input", function () {
     let value = searchInput.value.toLowerCase();
@@ -101,3 +118,6 @@ input.addEventListener('keydown', (event) => {
         addBtn.click();
     }
 });
+
+//// Triggered at the very bottom to ensure all variables, DOM elements, and functions are fully initialized before the script attempts to load and render data.
+loadTasks();
