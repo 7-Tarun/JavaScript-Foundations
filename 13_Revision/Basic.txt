@@ -1,0 +1,50 @@
+~Java Script Mastry Revision Roadmap:-
+
+Phase 1 – Thinking Like a JS Engineer
+
+• Function boundaries
+• Data flow
+• Pure vs impure functions
+• State
+• Side effects
+• DOM update strategy
+
+Phase 2 – Architecture
+
+• Feature ko design karna
+• File structure
+• Naming
+• Reusable code
+• Separation of concerns
+
+Phase 3 – Debugging
+
+• Console ka proper use
+• Breakpoints
+• Call Stack
+• Stack trace padhna
+• Random bugs
+• Race conditions
+• Async debugging
+
+Phase 4 – Modern JS Mastery
+
+• Kab map()
+• Kab for
+• Kab reduce()
+• Kab Object
+• Kab Map
+• Kab Set
+• Kab destructuring avoid karni hai
+• Kab spread operator expensive hota hai
+• Optimization mindset
+
+Phase 5 – React Preparation
+
+• Immutable updates
+• Component thinking
+• Event flow
+• State updates
+• Rendering
+• Closures
+• Modules

@@ -1,0 +1,61 @@
+Lesson 1 — Responsibility of a Function
+Ek function ka ek hi reason hona chahiye change hone ka.
+
+Beginners' Mistake:
+function addTodo() {
+    // validation
+    // create object
+    // update array
+    // update DOM
+    // save localStorage
+    // show success message
+}
+(100 lines ka function bana diya.)
+
+Professional Way:
+validateInput()
+↓
+createTodo()
+↓
+saveTodo()
+↓
+renderTodo()
+↓
+showToast()
+(Har function ek kaam.)
+
+~Use Manager Function Concept:
+Ek function jo multiple functions ko call kare aur unke beech me data flow ka kaam kare.
+
+With Code Explanation — Coordinator (Manager) Function Concept:
+
+button.addEventListener("click", handleAddTodo);
+// Ye "Manager Function" hai
+function handleAddTodo() {
+    // Step 1: Data read karo
+    const rawInput = readInput();
+
+    // Step 2: Transform karo
+    const cleanedInput = cleanInput(rawInput);
+
+    // Step 3: Validate karo
+    if (!validateInput(cleanedInput)) {
+        showError("Cannot be empty");
+        return;
+    }
+
+    // Step 4: Object banao: means Raw input ko ek structured object me convert karna
+    const newTodo = createTodoObject(cleanedInput);
+
+    // Step 5: Save karo
+    saveTodo(newTodo);
+
+    // Step 6: Render karo
+    renderUI(todos);
+
+    // Step 7: Clear karo
+    clearInput();
+}
+
+// Ye sirf "orchestration" hai
+// Real work ye sab functions kar rahe hain
