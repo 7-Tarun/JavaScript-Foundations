@@ -1,0 +1,70 @@
+A pure function always gives the exact same output for the same input and changes nothing outside itself. 
+An impure function can give different outputs or cause changes outside its block.
+
+Identify which function is pure and impure:-
+
+• Read Input      (Impure - reads from external source)
+• Clean Input     (Pure - transforms input without side effects)
+• Validate        (Pure - checks input without side effects)
+• Create Todo     (Pure - creates an object without side effects)
+• Save Todo       (Impure - modifies external state)
+• Render UI       (Impure - updates the DOM)
+• Clear Input     (Impure - changes the input values)
+
+Flow of Data in the Manager Function:
+Always Identify the Layers.
+
+User clicks button
+        ↓
+handleAddTodo() [Orchestrator (function that manages the flow)]
+        ↓
+    ┌───────────────────┐
+    │  Input Read       │ (DOM - Impure)
+    │  "   hello   "    │
+    └───────────────────┘
+        ↓
+    ┌───────────────────┐
+    │  Pure Logic       │ (Testable)
+    │  clean()          │ (DOM - Pure)
+    │  validate()       │
+    │  createTodo()     │
+    │  "hello" ✅       │
+    └───────────────────┘
+        ↓
+    ┌───────────────────┐
+    │  State Update     │ (Controlled)
+    │  todos.push()     │
+    │  [✓, ✓, NEW]      │
+    └───────────────────┘
+        ↓
+    ┌───────────────────┐
+    │  UI Render        │ (DOM - Impure)
+    │  renderList()     │
+    │  clearInput()     │
+    └───────────────────┘
+        ↓
+    Done!
+
+
+
+Can we make state update mutable?
+Yes.
+
+React repeatedly says "Never mutate state".
+
+
+- Mutable:
+function saveTodoMutable(todos, todo) {
+    todos.push(todo); // mutates original array
+}
+Problem: Directly changes the original array — causes side effects, harder to test, and breaks React state rules.
+
+- Immutable:
+function addTodo(oldTodos, newTodo) {
+    return [...oldTodos, newTodo]; // returns a new array
+}
+
+
+- Simple Analogy:
+Mutable: edit the same notebook page (original lost).
+Immutable: write a new page and keep the old one intact.
