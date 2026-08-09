@@ -52,7 +52,6 @@ Yes.
 
 React repeatedly says "Never mutate state".
 
-
 - Mutable:
 function saveTodoMutable(todos, todo) {
     todos.push(todo); // mutates original array
@@ -63,7 +62,6 @@ Problem: Directly changes the original array — causes side effects, harder to 
 function addTodo(oldTodos, newTodo) {
     return [...oldTodos, newTodo]; // returns a new array
 }
-
 
 - Simple Analogy:
 Mutable: edit the same notebook page (original lost).
