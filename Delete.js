@@ -3,38 +3,55 @@ const btn = document.querySelector(".btn");
 let list = document.querySelector(".list");
 
 let inputlist = [];
+btn.addEventListener("click", manager);
+
+//Manager Function
+function manager() {
+    let rawinput = readinput();
+    let cleaninput = clean(rawinput);
+    let validinput = validate(cleaninput);
+    cratetodo(validinput);
+    renderui();
+    input.value = "";
+}
 
 function readinput() {
     return input.value;
 }
+
 function clean(input) {
     return input.trim();
 }
+
 function validate(input) {
     if (input === "") {
         alert("Input Field can not be NULL");
-        return;
+        exit;
     }
     else {
         return input;
     }
 }
+
 function cratetodo(input) {
-    inputlist.push({
-        text: input,
-        completed: false,
-        id: 1,
+    if (inputlist.some(t => t.text === input)) {
+        alert("Task already exists!");
+    }
+    else {
+        inputlist.push({
+            text: input,
+            completed: false,
+            id: 1,
+        });
+    }
+}
+
+function renderui() {
+    inputlist.forEach(function (task) {
+        let taskList = document.createElement("li");
+        let span = document.createElement("span");
+        span.textContent = task.text;
+        taskList.appendChild(span);
+        list.appendChild(taskList);
     });
 }
-function renderui() {
-
-}
-
-//Manager Function
-btn.addEventListener("click", function () {
-    let rawinput = readinput();
-    let cleaninput = clean(rawinput);
-    let validinput = validate(cleaninput);
-    let objcration = cratetodo(validinput);
-    let render = renderui();
-});

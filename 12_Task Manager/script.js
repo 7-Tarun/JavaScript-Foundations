@@ -119,5 +119,5 @@ input.addEventListener('keydown', (event) => {
     }
 });
 
-//// Triggered at the very bottom to ensure all variables, DOM elements, and functions are fully initialized before the script attempts to load and render data.
+// Triggered at the very bottom to ensure all variables, DOM elements, and functions are fully initialized before the script attempts to load and render data.
 loadTasks();
