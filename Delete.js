@@ -47,6 +47,7 @@ function cratetodo(input) {
 }
 
 function renderui() {
+    list.innerHTML = "";
     inputlist.forEach(function (task) {
         let taskList = document.createElement("li");
         let span = document.createElement("span");
@@ -55,3 +56,10 @@ function renderui() {
         list.appendChild(taskList);
     });
 }
+
+input.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        btn.click();
+    }
+});
