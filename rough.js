@@ -1,17 +1,26 @@
-let score = 0;
-function updatescore(action) {
-    score = score+action;
-    console.log(score);
+let todos = [];
+
+function createTodo(text) {
+    return {
+        text: text,
+        id: Date.now(),
+        completed: false
+    };
 }
-function addPoint() {
-    updatescore(1);
-    console.log(score);
+
+// 2. Pure function - old array mutate nahi karta, new array return karta hai
+function addTodo(todos, todo) {
+    return [...todos, todo];
 }
-function resetScore() {
-    updatescore(0);
+
+// 3. Manager function - state ko handle karta hai
+function handleAddTodo(input) {
+    const newTodo = createTodo(input);       // step 1: object bana
+    todos = addTodo(todos, newTodo);          // step 2: array update kar
 }
-addPoint();
-addPoint();
-resetScore();
-addPoint();
-console.log("Final Score:", score);
+
+// Usage:
+handleAddTodo("Buy Milk");
+handleAddTodo("Go to gym");
+
+console.log(todos);

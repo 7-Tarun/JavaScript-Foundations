@@ -10,7 +10,9 @@ function manager() {
     let rawinput = readinput();
     let cleaninput = clean(rawinput);
     let validinput = validate(cleaninput);
-    cratetodo(validinput);
+    let newtodo = cratetodo(validinput);
+    inputlist = addtodo(inputlist,newtodo);
+
     renderui();
     input.value = "";
 }
@@ -38,12 +40,16 @@ function cratetodo(input) {
         alert("Task already exists!");
     }
     else {
-        inputlist.push({
+        return {
             text: input,
             completed: false,
             id: 1,
-        });
+        }
     }
+}
+
+function addtodo(inputlist,newtodo){
+    return [...inputlist, newtodo];
 }
 
 function renderui() {
