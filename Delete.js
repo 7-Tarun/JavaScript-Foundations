@@ -1,26 +1,18 @@
 let todos = [];
 
-function createTodo(text) {
+function createTodo() {
     return {
-        text: text,
-        id: Date.now(),
-        completed: false
-    };
+        text: "Buy Milk",
+        id: 1,
+        completed: false,
+    }
 }
 
-// 2. Pure function - old array mutate nahi karta, new array return karta hai
-function addTodo(todos, todo) {
-    return [...todos, todo];
+function addTodo(todos,newtodo) {
+    return [...todos,newtodo];
 }
 
-// 3. Manager function - state ko handle karta hai
-function handleAddTodo(input) {
-    const newTodo = createTodo(input);       // step 1: object bana
-    todos = addTodo(todos, newTodo);          // step 2: array update kar
+function manager() {
+    let newtodo = createTodo();
+    todos = addtodo(...todos,newtodo);
 }
-
-// Usage:
-handleAddTodo("Buy Milk");
-handleAddTodo("Go to gym");
-
-console.log(todos);

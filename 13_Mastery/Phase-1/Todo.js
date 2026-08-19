@@ -14,7 +14,6 @@ function manager() {
     let validinput = validate(cleaninput);
     let newtodo = cratetodo(validinput);
     inputlist = addtodo(inputlist,newtodo);
-
     renderui();
     input.value = "";
 }
