@@ -1,18 +1,22 @@
 let todos = [];
 
-function createTodo() {
+function createtodo(text) {
     return {
-        text: "Buy Milk",
+        text: text,
         id: 1,
         completed: false,
     }
 }
 
-function addTodo(todos,newtodo) {
-    return [...todos,newtodo];
+function addtodo(todos, newtodo) {
+    return [...todos, newtodo];
 }
 
 function manager() {
-    let newtodo = createTodo();
-    todos = addtodo(...todos,newtodo);
+    let newtodo = createtodo("Buy milk");
+    todos = addtodo(todos, newtodo);
+    console.log(todos);
 }
+manager();
+manager();
+manager();
