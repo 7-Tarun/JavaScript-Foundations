@@ -47,7 +47,7 @@ handleAddTodo() [Orchestrator (function that manages the flow)]
 
 
 
-Can we make state update mutable? ~Yes.
+Can we make state update immutable? ~Yes.
 
 React repeatedly says "Never mutate state".
 

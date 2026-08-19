@@ -1,71 +1,26 @@
-let input = document.querySelector(".input");
-const btn = document.querySelector(".btn");
-let list = document.querySelector(".list");
+let todos = [];
 
-let inputlist = [];
-btn.addEventListener("click", manager);
-
-//Manager Function
-function manager() {
-    let rawinput = readinput();
-    let cleaninput = clean(rawinput);
-    let validinput = validate(cleaninput);
-    let newtodo = cratetodo(validinput);
-    inputlist = addtodo(inputlist,newtodo);
-
-    renderui();
-    input.value = "";
+function createTodo(text) {
+    return {
+        text: text,
+        id: Date.now(),
+        completed: false
+    };
 }
 
-function readinput() {
-    return input.value;
+// 2. Pure function - old array mutate nahi karta, new array return karta hai
+function addTodo(todos, todo) {
+    return [...todos, todo];
 }
 
-function clean(input) {
-    return input.trim();
+// 3. Manager function - state ko handle karta hai
+function handleAddTodo(input) {
+    const newTodo = createTodo(input);       // step 1: object bana
+    todos = addTodo(todos, newTodo);          // step 2: array update kar
 }
 
-function validate(input) {
-    if (input === "") {
-        alert("Input Field can not be NULL");
-        exit;
-    }
-    else {
-        return input;
-    }
-}
+// Usage:
+handleAddTodo("Buy Milk");
+handleAddTodo("Go to gym");
 
-function cratetodo(input) {
-    if (inputlist.some(t => t.text === input)) {
-        alert("Task already exists!");
-    }
-    else {
-        return {
-            text: input,
-            completed: false,
-            id: 1,
-        }
-    }
-}
-
-function addtodo(inputlist,newtodo){
-    return [...inputlist, newtodo];
-}
-
-function renderui() {
-    list.innerHTML = "";
-    inputlist.forEach(function (task) {
-        let taskList = document.createElement("li");
-        let span = document.createElement("span");
-        span.textContent = task.text;
-        taskList.appendChild(span);
-        list.appendChild(taskList);
-    });
-}
-
-input.addEventListener('keydown', (event) => {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        btn.click();
-    }
-});
+console.log(todos);
