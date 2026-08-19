@@ -17,4 +17,3 @@ function manager() {
     todos = addtodo(todos, newtodo);
     console.log(todos);
 }
-
