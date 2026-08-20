@@ -18,11 +18,11 @@ function manager() {
     input.value = "";
 }
 
-function readinput() {
+function readinput() {      //Impure Function
     return input.value;
 }
 
-function clean(input) {
+function clean(input) {     //Pure Function
     return input.trim();
 }
 
@@ -36,7 +36,7 @@ function validate(input) {
     }
 }
 
-function cratetodo(input) {
+function cratetodo(input) {     //Pure Function
     if (inputlist.some(t => t.text === input)) {
         alert("Task already exists!");
     }
@@ -53,7 +53,7 @@ function addtodo(inputlist,newtodo){
     return [...inputlist, newtodo];
 }
 
-function renderui() {
+function renderui() {           //Impure Function
     list.innerHTML = "";
     inputlist.forEach(function (task) {
         let taskList = document.createElement("li");
