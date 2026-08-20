@@ -26,7 +26,7 @@ function clean(input) {     //Pure Function
     return input.trim();
 }
 
-function validate(input) {
+function validate(input) {      //Pure Function
     if (input === "") {
         alert("Input Field can not be NULL");
         exit;
@@ -49,7 +49,7 @@ function cratetodo(input) {     //Pure Function
     }
 }
 
-function addtodo(inputlist,newtodo){
+function addtodo(inputlist,newtodo){        //Pure Function
     return [...inputlist, newtodo];
 }
 
