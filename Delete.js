@@ -1,19 +1,34 @@
-let todos = [];
+let logHistory = [];
 
-function createtodo(text) {
-    return {
-        text: text,
-        id: 1,
-        completed: false,
-    }
+//pure function no side effects
+function  calculatetotal(order){
+    return order.total * 1.18;
 }
 
-function addtodo(todos, newtodo) {
-    return [...todos, newtodo];
+//Functions with Side effects
+
+function logorder(){
+    console.log("Processing: ", order);
 }
 
-function manager() {
-    let newtodo = createtodo("Buy milk");
-    todos = addtodo(todos, newtodo);
-    console.log(todos);
+function addtodo(order){
+    logHistory.push(order);
 }
+
+function timestamp(order){
+    order.timestamp = Date.now();
+}
+
+function createLocalStorage(order){
+    localStorage.setItem("lastOrder", JSON.stringify(order));
+}
+
+function managerFunction(){
+
+}
+
+const myOrder = { item: "Laptop",total: 50000 };
+const finalAmount = processOrder(myOrder);
+console.log("Final Amount:",finalAmount);
+
+//How many side effects? ->
