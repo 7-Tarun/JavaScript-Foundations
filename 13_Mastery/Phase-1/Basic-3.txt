@@ -17,3 +17,22 @@ Side effects like console logging, DOM manipulation, storage access, or API call
 
 DOM Update Strategy:
 Modify state first, then update the DOM from a single controlled point. Use minimal and batched updates to improve performance. This approach keeps your state and UI in sync while reducing unnecessary re-renders.
+
+DOM Update Strategy ka fundamental cycle hai:
+User action → state change → render → UI
+
+This cycle repeats:
+
+User
+ ↓
+Event
+ ↓
+State Change
+ ↓
+Render
+ ↓
+DOM
+ ↓
+User sees new UI
+ ↓
+Next User Action
