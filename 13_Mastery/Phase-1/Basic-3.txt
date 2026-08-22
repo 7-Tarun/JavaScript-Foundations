@@ -1,0 +1,25 @@
+FUNCTION AND STATE MANAGEMENT PRINCIPLES
+
+Function Boundaries
+
+Function should have a clear purpose. Every function must have a single responsibility that is easy to understand. When a function's job is limited and well-defined, the code becomes easier to read and maintain.
+
+Data Flow (Traceability)
+
+Data must always be traceable - you should know where it comes from and where it goes. When the data flow is transparent, debugging and testing become much simpler. You should always be able to track which data is coming from which source.
+
+Pure vs Impure Functions
+
+Pure functions are predictable and testable. They produce the same output for the same input and have no side effects. In contrast, Impure functions have side effects that can cause unexpected behavior in your code.
+
+State Management
+
+State is data that changes over time. State should be modified from only one controlled location. When state management is centralized, your code maintains consistency and remains easier to debug.
+
+Isolate Side Effects
+
+Side effects like console logging, DOM manipulation, storage access, or API calls should be kept separate from pure logic. These operations are unpredictable and complicate your codebase.
+
+DOM Update Strategy
+
+Modify state first, then update the DOM from a single controlled point. Use minimal and batched updates to improve performance. This approach keeps your state and UI in sync while reducing unnecessary re-renders.
