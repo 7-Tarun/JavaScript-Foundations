@@ -29,7 +29,7 @@ function clean(input) {     //Pure Function
 function validate(input) {      //Pure Function
     if (input === "") {
         alert("Input Field can not be NULL");
-        exit;
+        return;
     }
     else {
         return input;
@@ -71,3 +71,11 @@ input.addEventListener('keydown', (event) => {
         btn.click();
     }
 });
+
+
+//Problems in current structure:
+// 1. Function directly accessing global inputlist. inputlist.forEach(...)
+// ~Better Approach: renderui(inputlist)
+// 2. Createtodo function performing multiple tasks: State read + duplicate validation + object creation.
+// 3. The empty list is being printed once.
+// 4. Same ID.
