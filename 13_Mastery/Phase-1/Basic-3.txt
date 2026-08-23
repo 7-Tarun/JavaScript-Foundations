@@ -23,16 +23,18 @@ User action → state change → render → UI
 
 This cycle repeats:
 
-User
- ↓
-Event
- ↓
-State Change
- ↓
-Render
- ↓
-DOM
- ↓
-User sees new UI
- ↓
-Next User Action
+          USER ACTION
+               ↓
+          Event Handler
+               ↓
+      Pure Logic / Calculation
+               ↓
+          State Update
+               ↓
+        renderUI(state)
+               ↓
+              DOM
+               ↓
+         User sees UI
+               ↓
+        Next User Action
