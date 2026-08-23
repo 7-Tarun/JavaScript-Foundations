@@ -1,16 +1,17 @@
-let count = 0; 
-const button = document.querySelector("#addBtn"); 
-const countElement = document.querySelector("#count"); 
+let count = 0;
 
-function add(input){ 
-    return input + 1; 
-} 
+const button = document.querySelector("#addBtn");
+const countElement = document.querySelector("#count");
 
-function render(amount){ 
-    countElement.textContent = amount; 
-} 
+function incrementCount(currentCount) {
+    return currentCount+1;
+}
 
-button.addEventListener("click", function () { 
-    count = add(count); 
-    render(count); 
+function renderUI(count) {
+    countElement.textContent = count;
+}
+
+button.addEventListener("click", function () {
+    count = incrementCount(count);
+    renderUI(count);
 });
