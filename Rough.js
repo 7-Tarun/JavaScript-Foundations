@@ -1,17 +1,24 @@
 let count = 0;
 
 const button = document.querySelector("#addBtn");
-const countElement = document.querySelector("#count");
-
-function incrementCount(currentCount) {
-    return currentCount+1;
-}
-
-function renderUI(count) {
-    countElement.textContent = count;
-}
+const output = document.querySelector("#count");
 
 button.addEventListener("click", function () {
-    count = incrementCount(count);
-    renderUI(count);
+
+    count++;
+
+    if (count > 10) {
+        output.textContent = "Limit reached!";
+        localStorage.setItem("limitReached", "true");
+        return;
+    }
+
+    if (count % 2 === 0) {
+        output.textContent = `${count} — Even`;
+    } else {
+        output.textContent = `${count} — Odd`;
+    }
+
+    localStorage.setItem("count", count);
+
 });
