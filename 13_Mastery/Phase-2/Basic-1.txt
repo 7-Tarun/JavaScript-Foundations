@@ -39,7 +39,7 @@ Breaking the feature down into clean, predictable steps:
     
 • Step 2: Identify Required Data
     Need a unique identifier to target the specific todo.
-    Data needed: { id: 1, text: "Buy Milk", completed: false }
+    Data needed: todo.id { id: 1, text: "Buy Milk", completed: false }
 
 • Step 3: Define Pure Logic
     Keep the core calculation isolated from the outside world.
