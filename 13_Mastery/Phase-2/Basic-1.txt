@@ -1,0 +1,50 @@
+~Architecture
+
+Lesson 1: Feature Designing
+
+Core Shift in Mindset
+• Phase 1 Focus: How to separate responsibilities inside the code.
+• Phase 2 Focus: How to design a feature before writing any code.
+• The Senior Approach: Senior developers never jump straight into coding. They break down the problem first.
+
+/----------------------------------
+
+Feature Designing ka basic framework:
+
+1. User kya karega?
+        ↓
+2. System ko kya karna chahiye?
+        ↓
+3. State me kya change hoga?
+        ↓
+4. Kaunsa data chahiye?
+        ↓
+5. Pure logic kya hai?
+        ↓
+6. Kaunse side effects honge?
+        ↓
+7. UI me kya change hoga?
+
+/----------------------------------
+
+
+Case Study: Add "Delete Todo" Feature
+❌ The Beginner Approach: Click Button → Write Delete Code → Remove DOM Element
+
+💡 The Architecture Mindset
+Breaking the feature down into clean, predictable steps:
+• Step 1: Define Feature Behavior
+    User action: Clicks the delete button.
+    System response: Remove todo from state ➔ Re-render UI based on updated state.
+    
+• Step 2: Identify Required Data
+    Need a unique identifier to target the specific todo.
+    Data needed: { id: 1, text: "Buy Milk", completed: false }
+
+• Step 3: Define Pure Logic
+    Keep the core calculation isolated from the outside world.
+    Concept: Takes existing todos and an ID, then returns a new list without that ID.    deleteTodo(todos, id)
+
+• Step 4: Isolate Side Effects
+    Identify external operations that are separate from core logic.
+    Examples: DOM updates, localStorage synchronization.
