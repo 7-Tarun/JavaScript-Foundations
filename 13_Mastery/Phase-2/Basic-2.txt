@@ -1,0 +1,28 @@
+Feature Designing — Case Study: Add Item to Cart
+Scenario: Add an "Add Item" button to a shopping cart.
+
+7-Step Feature Design
+
+1. User Action
+   User clicks the Add Item button.
+
+2. System Behavior
+   Add the new item to the cart.
+
+3. State Change
+   Update the cart state with the newly added item.
+
+4. Required Data
+   Item name, price, and a unique id.
+
+5. Pure Logic
+    Create a new cart without mutating the original cart: addItem(cart, newItem) → newCart
+    return [...cart, newItem];
+
+6. Side Effects
+   Update/render the UI based on the updated cart state.
+
+7. UI Change
+   The newly added item appears in the cart based on the updated state.
+
+Flow: User Action → Pure Logic → State Update → Render → UI
