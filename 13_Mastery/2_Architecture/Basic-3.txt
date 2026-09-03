@@ -1,0 +1,23 @@
+~File Structure
+
+The Real Question of File Structure is: 
+Where does this code responsibility fit in terms of features, domains?
+
+For Example Take a cart senario:-
+
+addItem()               return [...cart, item];
+removeItem()            return cart.filter(item => item.id !== id);
+calculateTotal()
+
+renderCart()
+
+saveCart()
+loadCart()
+
+handleAdd()
+handleRemove()
+
+Solution:
+Group 1 — Cart Logic ✅
+
+Responsibility: Cart/business logic
