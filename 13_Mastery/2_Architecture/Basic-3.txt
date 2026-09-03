@@ -17,7 +17,28 @@ loadCart()
 handleAdd()
 handleRemove()
 
-Solution:
-Group 1 — Cart Logic ✅
 
-Responsibility: Cart/business logic
+~ Solution:------------------------------------------------
+• Group 1 — Cart Logic ✅
+addItem()
+removeItem()
+calculateTotal()
+• Responsibility: Cart/business logic
+
+• Group 2 — Persistence ✅
+saveCart()
+loadCart()
+• Responsibility: Persistence / localStorage
+
+• Group 3 — UI Handlers ✅
+renderCart()
+• Responsibility: UI rendering
+
+• Group 4 — User Interaction + Orchestrators ✅
+handleAdd()
+handleRemove()
+
+In React:-
+Component
+    ↓
+Meaningful UI responsibility
