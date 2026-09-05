@@ -1,5 +1,4 @@
 ~ Class 3: Naming Conventions
-
 A name should clearly communicate what the thing represents or does.
 
 Which of the following is better?
@@ -9,3 +8,27 @@ let d = 500;                  VS                let itemPrice = 500;
 let a = false;                                  let isCompleted = false;
 
 Looking at B, the meaning is clearly understood.
+
+~ Class 4: Reusable Code
+Reusable code = a piece of logic that can be used in multiple places without rewriting it.
+
+Hard Coded: 
+function calculateCartTotal() {
+    return cart.reduce(...);
+}
+
+Better:
+function calculateTotal(items) {
+    return items.reduce(...);
+}
+
+
+function calculateTotal(items) {
+    return items.reduce((total, item) => {
+        return total + item.price * item.quantity;
+    }, 0);
+}
+
+calculateTotal(cart);
+calculateTotal(wishlist);
+calculateTotal(orderItems);
