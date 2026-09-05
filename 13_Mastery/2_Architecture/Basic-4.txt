@@ -1,0 +1,11 @@
+~ Class 3: Naming Conventions
+
+A name should clearly communicate what the thing represents or does.
+
+Which of the following is better?
+    (A)                                                  (B)
+let x = [];                                     let cartItems = [];
+let d = 500;                  VS                let itemPrice = 500;
+let a = false;                                  let isCompleted = false;
+
+Looking at B, the meaning is clearly understood.
